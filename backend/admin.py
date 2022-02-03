@@ -1,7 +1,8 @@
 from django.contrib import admin
 
-from backend.models import Enfermedad
+from backend.models import Disease, ReferenceType
 
 # Register your models here.
 
-admin.site.register(Enfermedad)
+admin.site.register(Disease)
+admin.site.register(ReferenceType)
