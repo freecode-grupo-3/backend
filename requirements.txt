@@ -2,3 +2,5 @@ django==3.2.11
 djangorestframework==3.13.1
 django-cors-headers==3.10.1
 daphne==3.0.2
+djangorestframework-simplejwt==4.3.0
+PyJWT==1.7.1
