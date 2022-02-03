@@ -11,8 +11,8 @@ class ReferenceTypeSerializer(serializers.ModelSerializer):
         model = ReferenceType
         fields = serializers.ALL_FIELDS
 
-common_reference_fields = ['created_at', 'last_modified', 'created_by', 'place_of_origin_name', 'address_of_place_of_origin', 'extra_info']
-common_read_only_fields = ['created_at', 'last_modified']
+common_reference_fields = ['created_at', 'last_modified', 'created_by', 'place_of_origin_name', 'address_of_place_of_origin', 'extra_info', 'type_of_reference']
+common_read_only_fields = ['created_at', 'last_modified', 'type_of_reference']
 
 class MedicineReferenceSerializer(serializers.ModelSerializer):
     class Meta:

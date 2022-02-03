@@ -25,6 +25,8 @@ class Reference(models.Model):
     address_of_place_of_origin = models.CharField(max_length=255, verbose_name='Address of the place of origin', blank=True)
     extra_info = models.CharField(max_length=500, verbose_name='Extra information for this reference', blank=True)
 
+    class Meta:
+        ordering = ('created_at',)
 
     def get_types(self):
         return [
@@ -42,7 +44,7 @@ class Reference(models.Model):
             except t[1]:
                 pass
 
-        raise 'other'
+        return 'other'
 
     @property
     def child(self):
