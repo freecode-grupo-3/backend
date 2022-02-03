@@ -16,4 +16,4 @@ class ReferenceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Reference
-        exclude = ['created_at', 'last_modified',]
+        read_only_fields = ['created_at', 'last_modified', 'created_by']
