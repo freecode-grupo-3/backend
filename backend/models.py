@@ -44,16 +44,17 @@ class Reference(models.Model):
 
         raise 'other'
 
-    def payload(self):
+    @property
+    def child(self):
         for t in self.get_types():
             try:
                 return t[0]()
             except t[1]:
                 pass
-        return self.extra_info
+        return self
 
     def __str__(self) -> str:
-        return str(self.payload())
+        return str(self.child)
 
 class PriceMixin(models.Model):
     price = models.DecimalField(max_digits=12, decimal_places=2, verbose_name='Price of the medicine', null=True, blank=True)
