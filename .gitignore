@@ -107,9 +107,6 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-
-# Hasta definir la base de datos
-migrations/
 db.sqlite3
 
 # Docker

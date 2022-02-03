@@ -33,6 +33,8 @@ Backend para la aplicación web del hackathon #freecode
         - PUT
         - PATCH
         - DELETE
+    - users/{user_id}/
+        - GET
     - users/create/
         - POST
             - 'username', 'password', 'first_name', 'last_name', 'email', 'groups'
