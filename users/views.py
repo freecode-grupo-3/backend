@@ -17,7 +17,7 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     permission_classes = (IsAuthenticated,)
 
-    @action( methods=["GET"], detail=False)
+    @action(methods=["GET"], detail=True)
     def me(self, request):
         if request.user.id:
             serializer = UserSerializer(request.user, context={"request": request})
@@ -33,9 +33,3 @@ class CreateUserViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     serializer_class = CreateUserSerializer
     permission_classes = (AllowAny,)
 
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        self.perform_create(serializer)
-        headers = self.get_success_headers(serializer.data)
-        return Response(status=status.HTTP_201_CREATED, headers=headers)

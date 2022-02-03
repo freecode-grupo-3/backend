@@ -1,6 +1,7 @@
 from rest_framework import serializers, exceptions
 from django.contrib.auth.models import Group
 from users.models import User
+from backend.serializers import EnfermedadSerializer
 
 class GroupSerializer(serializers.ModelSerializer):    
     class Meta:
@@ -9,10 +10,10 @@ class GroupSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     groups = GroupSerializer(many=True)
+    ills_of_interests = EnfermedadSerializer(many=True)
     class Meta:
         model = User
-        fields = ('id', 'first_name', 'last_name','email', 'is_active', 'groups')
-
+        fields = ('id', 'first_name', 'last_name','email', 'is_active', 'groups', 'ills_of_interests')
 
 class CreateUserSerializer(serializers.ModelSerializer):
 
