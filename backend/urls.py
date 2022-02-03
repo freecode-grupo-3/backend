@@ -1,10 +1,12 @@
 from rest_framework.routers import DefaultRouter
 
-from .views import ReferenceViewSet
+from .views import DiseaseViewSet, ReferenceTypeViewSet, ReferenceViewSet
 
 router = DefaultRouter()
 
-router.register('', ReferenceViewSet)
+router.register('references', ReferenceViewSet)
+router.register('diseases', DiseaseViewSet)
+router.register('reference-types', ReferenceTypeViewSet)
 
 urlpatterns = [
 ]
