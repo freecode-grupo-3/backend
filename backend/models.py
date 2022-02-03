@@ -21,8 +21,8 @@ class Reference(models.Model):
     last_modified = models.DateTimeField(verbose_name='Last modified date', auto_now=True, blank=True)
     created_by = models.ForeignKey('users.User', null=True, blank=True, on_delete=models.SET_NULL)
     related_disease = models.ForeignKey(Disease, null=True, blank=True, on_delete=models.SET_NULL)
-    place_of_origin_name = models.CharField(max_length=100, verbose_name='Place of origin name')
-    address_of_place_of_origin = models.CharField(max_length=255, verbose_name='Address of the place of origin')
+    place_of_origin_name = models.CharField(max_length=100, verbose_name='Place of origin name', blank=True)
+    address_of_place_of_origin = models.CharField(max_length=255, verbose_name='Address of the place of origin', blank=True)
     extra_info = models.CharField(max_length=500, verbose_name='Extra information for this reference', blank=True)
 
 
