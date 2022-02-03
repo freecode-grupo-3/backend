@@ -25,3 +25,14 @@ Backend para la aplicación web del hackathon #freecode
 - Correr servidor
     - daphne -b 0.0.0.0 -p 8000 medicrumbs.asgi:application
 
+## Endpoints
+
+- Users
+    - users/
+        - GET
+        - PUT
+        - PATCH
+        - DELETE
+    - users/create/
+        - POST
+            - 'username', 'password', 'first_name', 'last_name', 'email', 'groups'
