@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 
-from backend.models import Reference
-from backend.serializers import ReferenceSerializer
+from backend.models import Disease, Reference, ReferenceType
+from backend.serializers import DiseaseSerializer, ReferenceSerializer, ReferenceTypeSerializer
 
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
@@ -12,3 +12,14 @@ class ReferenceViewSet(viewsets.ModelViewSet):
     queryset = Reference.objects.all()
     permission_classes = (IsAuthenticated,)
 
+
+class DiseaseViewSet(viewsets.ModelViewSet):
+    serializer_class = DiseaseSerializer
+    queryset = Disease.objects.all()
+    permission_classes = (AllowAny,)
+
+
+class ReferenceTypeViewSet(viewsets.ModelViewSet):
+    serializer_class = ReferenceTypeSerializer
+    queryset = ReferenceType.objects.all()
+    permission_classes = (AllowAny,)
