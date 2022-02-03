@@ -20,6 +20,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         try:
+            print(validated_data)
             groups = Group.objects.get(name = validated_data.pop('groups'))
         except Group.DoesNotExist:
             raise exceptions.APIException("Grupo/Rol no Existe")
