@@ -6,6 +6,5 @@ from backend.models import Disease, ReferenceType
 
 class User(AbstractUser):
     email = models.EmailField('email address', unique=True)
-    disease_of_interest = models.ManyToManyField(to=Disease, related_name='+')
+    diseases_of_interest = models.ManyToManyField(to=Disease, related_name='+')
     reference_types_of_interest = models.ManyToManyField(to=ReferenceType, related_name='+')
-    # REQUIRED_FIELDS = ['username']
